@@ -1,16 +1,34 @@
--- vim.cmd("set expandtab")
--- vim.cmd("set tabstop=2")
--- vim.cmd("set softtabstop=2")
--- vim.cmd("set shiftwidth=2")
-
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
+vim.opt.cursorline = true
 
 vim.g.mapleader = " "
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Sets how neovim will display certain whitespace in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = 'a'
+
+-- Don't show the mode, since it's already in status line
+vim.opt.showmode = false
+
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -45,10 +63,6 @@ vim.wo.signcolumn = 'yes'
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
-
--- custom keymaps
-vim.keymap.set("n", "<leader>o", "o<Esc>k")
-vim.keymap.set("n", "<leader>O", "O<Esc>j")
 
 -- Highligth on yank
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
