@@ -9,7 +9,7 @@ return {
     -- Format the current time to get the hour
     local currentHour = tonumber(os.date("%H", currentTime))
 
-    if currentHour >= 8 and currentHour <= 16 then
+    if currentHour >= 6 and currentHour <= 17 then
       vim.cmd.colorscheme("catppuccin-latte")
     else
       vim.cmd.colorscheme("catppuccin-mocha")
