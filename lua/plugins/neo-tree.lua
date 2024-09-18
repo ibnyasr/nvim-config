@@ -13,8 +13,9 @@ return {
       },
     })
 
-    -- vim.keymap.set("n", "<leader>e", ":Neotree toggle <cr>", {})
-    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal<cr>", {})
-    vim.keymap.set("n", "<leader>q", ":Neotree filesystem close<cr>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree toggle <cr>", {})
+    vim.keymap.set("n", "<leader>r", ":Neotree reveal <cr>", {})
+    vim.keymap.set("n", "<leader>w", ":Neotree filesystem close<cr>", {})
+    -- vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal<cr>", {})
   end,
 }
